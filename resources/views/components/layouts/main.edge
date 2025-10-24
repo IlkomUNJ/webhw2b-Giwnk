@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @vite(['resources/css/app.css','resources/js/app.js', 'resources/js/cart.js','resources/js/search.js' ])
+    <title>
+      @!section('title', 'Rumah Kopi Canggih')
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Lexend', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#653F2C]">
+    @include('components/navbar')
+
+    {{{ await $slots.main() }}}
+    <footer class="bg-[#653F2C] text-[#F5EFE5] py-8 flex flex-col items-center text-center gap-2">
+      <p>
+        &copy; 2025 Rumah Kopi Canggih. All Rights Reserved.
+      </p>
+      <address class="not-italic leading-relaxed text-sm">
+        Hubungi kami di:
+            <a href="tel:+628123456789" class="underline hover:text-[#E0C7A9] transition">+62 812-3456-789</a>·
+            <a href="mailto:halo@rumahkopicanggih.com" class="underline hover:text-[#E0C7A9] transition">halo
+          @rumahkopicanggih.com
+        </a>
+        <br />
+        Lokasi: Jl. Jenderal Sudirman No. 12, Bangka Tengah.
+      </address>
+    </footer>
+
+    <script src="/js/cart.js">
+
+    </script>
+    <script src="/js/search.js">
+</html>

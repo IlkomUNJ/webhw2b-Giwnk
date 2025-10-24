@@ -1,0 +1,26 @@
+<div
+  class="product-card-item bg-[#F5EFE5] w-72 h-[400px] flex flex-col items-center justify-center text-center rounded-xl shadow-lg p-4 transition-transform hover:-translate-y-1"
+  data-product-id="{{ product.id }}"  data-product-name="{{ product.name }}"
+  data-product-price="{{ product.price }}"
+  data-product-netto="{{ product.netto }}"
+>
+  <img src="{{ product.img }}" class="w-52 h-52 rounded-md shadow-md mb-3" alt="" />
+  <h3 class="font-bold text-[#653F2C]">
+    {{ product.name }}
+  </h3>
+  <h4 class="text-[#653F2C] font-semibold mb-2">
+    IDR {{ product.price }}
+  </h4>
+  <p class="text-sm text-[#653F2C]">
+    Varietas: {{ product.varietas }}
+  </p>
+  <p class="text-sm text-[#653F2C]">
+    Flavor Notes: {{ product.flavorNotes }}
+  </p>
+  <p class="text-sm text-[#653F2C] mb-2">
+    Netto: {{ product.netto }}
+  </p>
+  <button
+    class="add-to-cart bg-[#653F2C] text-[#F5EFE5] px-4 py-2 rounded-md transition-transform hover:-translate-y-1"
+  >Beli</button>
+</div>

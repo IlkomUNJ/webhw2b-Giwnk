@@ -1,0 +1,54 @@
+<nav
+  class="w-full py-3 px-6 md:px-10 flex justify-between items-center bg-[#F5EFE5] border-b-[3px] border-[#653F2C] sticky top-0 z-50"
+>
+  {{-- Logo --}}
+  <img src="/assets/logo.png" alt="Kopi Rumah Canggih" class="w-12 h-12 flex-shrink-0" />
+
+  {{-- Nav Links (Desktop) --}}
+  <ul class="hidden md:flex gap-8 lg:gap-10 text-[#653F2C] font-bold list-none">
+    <li>
+      <a href="/" class="hover:-translate-y-1 transition duration-150 ease-out">Beranda</a>
+    </li>
+    <li>
+      <a href="/aboutus" class="hover:-translate-y-1 transition duration-150 ease-out">Tentang Kami</a>
+    </li>
+    <li>
+      <a href="/products" class="hover:-translate-y-1 transition duration-150 ease-out">Produk Kami</a>
+    </li>
+    <li>
+      <a href="/contact" class="hover:-translate-y-1 transition duration-150 ease-out">Kontak Kami</a>
+    </li>
+  </ul>
+
+  {{-- Search & Cart --}}
+  <section class="flex items-center space-x-4">
+    {{-- Search Bar --}}
+    <div class="relative hidden sm:block">
+      <input
+        type="text"
+        id="product-search-input"
+        placeholder="Cari kopi..."
+        class="py-1 px-3 w-32 md:w-40 border border-[#653F2C] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#653F2C]/50 transition duration-300 bg-[#F5EFE5] text-[#653F2C]"
+      />
+      <button
+        class="absolute right-0 top-1/2 transform -translate-y-1/2 mr-2 text-[#653F2C] hover:text-[#E0C7A9] transition"
+      >
+        🔍
+            </button>
+    </div>
+
+    {{-- Cart Button --}}
+    <a
+      href="/checkout"
+      class="text-[#653F2C] hover:text-[#E0C7A9] transition-colors duration-200 p-2 rounded-full hover:bg-[#653F2C]/10 flex items-center justify-center"
+    >
+      🛒
+            <span class="sr-only">Keranjang</span>
+    </a>
+
+    {{-- Mobile Menu Icon (Opsional, untuk responsivitas) --}}
+    <button class="md:hidden text-[#653F2C] hover:text-[#E0C7A9] p-2">
+      ☰
+        </button>
+  </section>
+</nav>

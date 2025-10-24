@@ -1,0 +1,94 @@
+@layouts.main()
+  @slot('main')
+    <section class="flex justify-center items-center py-16 bg-[#F5EFE5] min-h-[calc(100vh-150px)]">
+      <div
+        class="w-full max-w-md bg-white p-8 rounded-xl shadow-2xl border border-[#653F2C]/20 transition-all duration-300 hover:shadow-3xl"
+      >
+        <h1 class="text-3xl font-bold text-[#653F2C] text-center mb-2">
+          Buat Akun Baru
+        </h1>
+        <p class="text-center text-sm mb-6 text-[#653F2C]/70">
+          Daftar dan mulai nikmati kopi pilihan kami!
+        </p>
+
+        <form method="POST" action="{{ route('register.store') }}" class="space-y-5">
+          {{-- Wajib ada untuk keamanan --}}
+          {{ csrfField() }}
+          {{-- 1. NAMA LENGKAP --}}
+          <div>
+            <label for="full_name" class="block text-sm font-medium text-[#653F2C]">Nama Lengkap</label>
+            <input
+              type="text"
+              id="full_name"
+              name="full_name"
+              required
+              value="{{ flashMessages.get('full_name') || '' }}"
+              class="mt-1 block w-full px-4 py-2 border border-[#653F2C]/30 rounded-lg bg-[#F5EFE5] placeholder-[#653F2C]/50 focus:ring-2 focus:ring-[#653F2C]/60 focus:border-[#653F2C] transition duration-200"
+              placeholder="Tulis nama lengkap kamu"
+              {{-- Simpan nilai input lama --}}
+            />
+            {{-- Tampilkan Error Validasi --}}
+            @if(flashMessages.has('errors.full_name'))
+              <p class="mt-1 text-xs text-red-600">
+                {{ flashMessages.get('errors.full_name') }}
+              </p>
+            @endif
+          </div>
+
+          {{-- 2. EMAIL --}}
+          <div>
+            <label for="email" class="block text-sm font-medium text-[#653F2C]">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              value="{{ flashMessages.get('email') || '' }}"
+              class="mt-1 block w-full px-4 py-2 border border-[#653F2C]/30 rounded-lg bg-[#F5EFE5] placeholder-[#653F2C]/50 focus:ring-2 focus:ring-[#653F2C]/60 focus:border-[#653F2C] transition duration-200"
+              placeholder="mail@contoh.com"
+              {{-- Simpan nilai input lama --}}
+            />
+            @if(flashMessages.has('errors.email'))
+              <p class="mt-1 text-xs text-red-600">
+                {{ flashMessages.get('errors.email') }}
+              </p>
+            @endif
+          </div>
+
+          {{-- 3. PASSWORD --}}
+          <div>
+            <label for="password" class="block text-sm font-medium text-[#653F2C]">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="mt-1 block w-full px-4 py-2 border border-[#653F2C]/30 rounded-lg bg-[#F5EFE5] placeholder-[#653F2C]/50 focus:ring-2 focus:ring-[#653F2C]/60 focus:border-[#653F2C] transition duration-200"
+              placeholder="Minimal 8 karakter"
+            />
+            @if(flashMessages.has('errors.password'))
+              <p class="mt-1 text-xs text-red-600">
+                {{ flashMessages.get('errors.password') }}
+              </p>
+            @endif
+          </div>
+
+          {{-- 4. TOMBOL DAFTAR --}}
+          <button
+            type="submit"
+            class="w-full py-3 text-sm font-semibold text-[#F5EFE5] bg-[#653F2C] rounded-lg hover:bg-[#4b2f21] transition duration-300 shadow-md"
+          >
+            Daftar
+                    </button>
+        </form>
+
+        <p class="mt-6 text-center text-sm text-[#653F2C]/70">
+          Sudah punya akun? <a
+            href="{{ route('login.index') }}"
+            class="font-semibold text-[#653F2C] hover:underline transition"
+          >Masuk di sini</a>.
+        </p>
+      </div>
+    </section>
+  @end
+@end

@@ -1,0 +1,8 @@
+<section class="qs-card bg-[#F5EFE5] w-[250px] h-[400px] flex flex-col justify-center items-center gap-3 md:gap-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4"> 
+    {{-- Asumsi service memiliki properti: img, title, description --}}
+    <img src="{{ service.img }}" alt="{{ service.title }}" class="rounded-lg w-[150px] h-[150px] object-cover" width="150" height="150">
+    <section class="qs-card-content flex flex-col items-center">
+        <h3 class="text-center text-base md:text-lg text-[#653F2C] px-5 py-1 font-bold">{{ service.title }}</h3>
+        <p class="h-[150px] text-sm text-center px-2 text-[#653F2C] overflow-hidden leading-relaxed">{{ service.description }}</p>
+    </section>
+</section>

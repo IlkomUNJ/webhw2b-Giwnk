@@ -1,0 +1,36 @@
+@layouts.main()
+  @slot('main')
+
+    <section class="my-12">
+      <h1 class="text-center text-3xl text-[#653F2C] font-semibold py-6">
+        Rekomendasi Terbaik Kami
+      </h1>
+      <section class="flex flex-wrap justify-center gap-8 px-4">
+        @each(item in bestSellers)
+          @!productCard({product: item})
+        @endeach
+      </section>
+
+      <section class="my-12">
+        <h1 class="text-center text-3xl text-[#653F2C] font-semibold py-6">
+          Biji Kopi Arabica
+        </h1>
+        <section class="flex flex-wrap justify-center gap-8 px-4">
+          @each(item in arabicaProductCard)
+            @!arabicaProductCard({product: item})
+          @endeach
+        </section>
+
+        <section class="my-12">
+          <h1 class="text-center text-3xl text-[#653F2C] font-semibold py-6">
+            Biji Kopi Robusta
+          </h1>
+          <section class="flex flex-wrap justify-center gap-8 px-4">
+            @each(item in robustaProductCard)
+              @!robustaProductCard({product: item})
+            @endeach
+          </section>
+
+        @end
+      @end
+      

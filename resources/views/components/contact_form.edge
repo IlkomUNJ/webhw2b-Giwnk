@@ -1,0 +1,54 @@
+<form action="/contact" method="POST" class="space-y-6">
+    <div>
+        <label for="name" class="block text-sm font-medium text-[#653F2C]">Nama Lengkap</label>
+        <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            class="mt-1 block w-full px-4 py-2 border border-[#653F2C]/30 rounded-lg shadow-sm focus:ring-[#653F2C] focus:border-[#653F2C] sm:text-sm transition duration-200 bg-[#F5EFE5]"
+            placeholder="Siapa nama kerenmu?"
+        >
+    </div>
+    <div>
+        <label for="email" class="block text-sm font-medium text-[#653F2C]">Alamat Email</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            class="mt-1 block w-full px-4 py-2 border border-[#653F2C]/30 rounded-lg shadow-sm focus:ring-[#653F2C] focus:border-[#653F2C] sm:text-sm transition duration-200 bg-[#F5EFE5]"
+            placeholder="mail@contoh.com"
+        >
+    </div>
+
+    {{-- Input Subjek --}}
+    <div>
+        <label for="subject" class="block text-sm font-medium text-[#653F2C]">Subjek</label>
+        <input 
+            type="text" 
+            id="subject" 
+            name="subject" 
+            required 
+            class="mt-1 block w-full px-4 py-2 border border-[#653F2C]/30 rounded-lg shadow-sm focus:ring-[#653F2C] focus:border-[#653F2C] sm:text-sm transition duration-200 bg-[#F5EFE5]"
+            placeholder="Misalnya: Tertarik Kolaborasi / Tanya Stok"
+        >
+    </div>
+    <div>
+        <label for="message" class="block text-sm font-medium text-[#653F2C]">Pesan Kamu</label>
+        <textarea 
+            id="message" 
+            name="message" 
+            rows="5" 
+            required 
+            class="mt-1 block w-full px-4 py-2 border border-[#653F2C]/30 rounded-lg shadow-sm focus:ring-[#653F2C] focus:border-[#653F2C] sm:text-sm transition duration-200 bg-[#F5EFE5]"
+            placeholder="Tulis pesan kamu di sini..."
+        ></textarea>
+    </div>
+    <button 
+        type="submit" 
+        class="w-full py-3 px-4 border border-transparent rounded-lg shadow-md text-sm font-semibold text-[#F5EFE5] bg-[#653F2C] hover:bg-[#4b2f21] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#653F2C] transition duration-300"
+    >
+        Kirim Pesan
+    </button>
+</form>

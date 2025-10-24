@@ -1,0 +1,67 @@
+<!-- resources/views/home.edge -->
+@layouts.main()
+  @slot('main')
+    <header
+      class="bg-cover bg-center h-64 flex justify-center items-center text-center text-[#F5EFE5]"
+      style="background-image: url('/assets/hero-pic/hero.png');"
+    >
+      <section>
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">
+          Rumah Kopi Canggih
+        </h1>
+        <p class="text-base md:text-lg">
+          Setiap Seduhan Punya Ritme. Setiap Ritme Punya Kisah.
+        </p>
+      </section>
+    </header>
+
+    <section class="my-12">
+      <h1 class="text-center text-3xl text-[#653F2C] font-semibold py-6">
+        Kenapa Memilih Kami?
+      </h1>
+      <section class="flex flex-wrap justify-center gap-8 px-4 max-w-6xl mx-auto">
+        {{-- @each loop dan component kamu sudah bagus, kita pertahankan --}}
+        @each(service in qualityServices)
+          @!serviceCard({service: service})
+        @endeach
+      </section>
+    </section>
+
+    <section class="my-12">
+      <h1 class="text-center text-3xl text-[#653F2C] font-semibold py-6">
+        Rekomendasi Terbaik Kami
+      </h1>
+      <section class="flex flex-wrap justify-center gap-8 px-4">
+        @each(item in bestSellers)
+          @!productCard({product: item})
+        @endeach
+      </section>
+
+      <a
+        href="/products"
+        class="flex justify-center text-[#653F2C] font-bold text-xl mt-6 hover:text-[#4b2f21] transition duration-300"
+      >Lihat Selengkapnya</a>
+    </section>
+
+    <section class="my-12">
+      <h1 class="text-center text-3xl text-[#653F2C] font-semibold py-6">
+        Galeri Kami
+      </h1>
+      <section class="flex flex-wrap justify-center gap-6 px-4 max-w-6xl mx-auto">
+        @each(pic in galleries)
+          <section class="image-card">
+            {{-- Class disesuaikan untuk transisi dan shadow --}}
+            <img
+              src="{{ pic }}"
+              alt=""
+              class="w-72 h-72 rounded-xl object-cover shadow-lg hover:shadow-xl hover:scale-[1.01] transition duration-300"
+            />
+          </section>
+        @endeach
+      </section>
+    </section>
+  @end
+  <script src="/js/cart.js">
+
+  </script>
+@end

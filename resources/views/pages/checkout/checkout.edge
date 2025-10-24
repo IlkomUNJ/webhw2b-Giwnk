@@ -1,0 +1,70 @@
+@layouts.main()
+  @slot('main')
+    <section class="max-w-[900px] mx-auto mt-10 mb-10 p-5 bg-[#F5EFE5] rounded-lg shadow-lg">
+      <h1 class="text-[#653F2C] text-center mb-8 pb-3 border-b-2 border-[#E0C7A9] text-2xl font-semibold">
+        Keranjang Anda
+      </h1>
+
+      <table class="w-full border-collapse mb-6 shadow-md bg-white rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-[#653F2C] text-[#F5EFE5] text-center text-[15px] font-bold">
+            <th class="py-4 px-3">
+              Produk
+            </th>
+            <th class="py-4 px-3">
+              Harga Satuan
+            </th>
+            <th class="py-4 px-3">
+              Jumlah
+            </th>
+            <th class="py-4 px-3">
+              Subtotal
+            </th>
+          </tr>
+        </thead>
+
+        <tbody id="cart-product-rows" class="text-[#333]">
+          <tr id="loading-row">
+             <td colspan="4" class="py-5 px-3 text-center text-[#653F2C]">Memuat keranjang...</td>
+          </tr>
+        </tbody>
+        <tbody class="text-[#333]">
+          
+          <tr class="bg-[#f9f9f9]">
+            <td colspan="3" class="py-2 px-3 text-left text-[15px]">
+              Subtotal (<span id="total-items-count">0</span> Item)
+            </td>
+            <td id="cart-subtotal" class="py-2 px-3 text-center text-[15px]">
+              IDR 0
+            </td>
+          </tr>
+
+          <tr class="bg-[#f9f9f9]">
+            <td colspan="3" class="py-2 px-3 text-left text-[15px]">
+              Biaya Pengiriman (Ekonomi)
+            </td>
+            <td id="shipping-fee" class="py-2 px-3 text-center text-[15px]">
+              IDR 35K 
+            </td>
+          </tr>
+
+          <tr class="bg-[#E0C7A9] border-t-[3px] border-[#653F2C]">
+            <td colspan="3" class="py-4 px-3 text-left font-bold text-[#653F2C] text-[16px]">
+              TOTAL AKHIR
+            </td>
+            <td id="final-total" class="py-4 px-3 text-center font-bold text-[#653F2C] text-[16px]">
+              IDR 35K </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="text-center mt-6">
+        <button
+          class="py-4 px-8 text-[16px] font-bold uppercase cursor-pointer bg-[#653F2C] text-[#F5EFE5] rounded-md font-[Lexend] shadow-md hover:bg-[#4a2f20] hover:-translate-y-[2px] transition-all duration-300 ease-in-out"
+        >
+          Beli Sekarang
+        </button>
+      </div>
+    </section>
+  @end
+@end

@@ -1,0 +1,81 @@
+@layouts.main()
+  @slot('main')
+    <!-- Filosofi -->
+    <section class="text-center my-12">
+      <h1 class="text-3xl font-bold mb-8">
+        Filosofi Kopi Rumah Canggih
+      </h1>
+      <div class="mx-auto max-w-4xl bg-[#F5EFE5] p-8 rounded-xl shadow-lg">
+        <p class="text-justify">
+          Rumah Kopi Canggih, rumah yang awalnya hanya menjadi tempat bercengkrama dengan keluarga berhasil melahirkan sebuah resep kopi yang diracik sepenuh hati dan presisi.
+      “Canggih” bukan tentang teknologi, tetapi karya musik dari Band Indonesia bernama Perunggu. 
+      Liriknya menggambarkan cinta terhadap musik, seperti cinta kami pada setiap 15 gram kopi filter.
+      Rumah Kopi Canggih hadir untuk mereka yang mencintai musik Indonesia dan secangkir kopi hangat.
+        </p>
+      </div>
+    </section>
+
+    <!-- Perjalanan Kami -->
+    <section class="my-16 text-center">
+      <h1 class="text-3xl font-bold mb-8">
+        Perjalanan Kami
+      </h1>
+      <div class="flex flex-wrap justify-center gap-8 px-6">
+        @each(journey in journeys)
+          <div
+            class="bg-[#F5EFE5] shadow-lg w-64 h-80 flex flex-col justify-center items-center rounded-xl p-4"
+          >
+            <h3 class="text-2xl font-bold">
+              {{ journey.year }}
+            </h3>
+            <h5 class="text-lg font-semibold">
+              {{ journey.month }}
+            </h5>
+            <p class="text-sm text-justify mt-3">
+              {{ journey.desc }}
+            </p>
+          </div>
+        @endeach
+      </div>
+    </section>
+
+    <!-- Nilai dan Komitmen -->
+    <section class="my-16 text-center">
+      <h1 class="text-3xl font-bold mb-8">
+        Nilai dan Komitmen Kami
+      </h1>
+      <div class="flex flex-wrap justify-center gap-8 px-6">
+        @each(val in values)
+          <div
+            class="bg-[#F5EFE5] shadow-lg w-[600px] h-[250px] flex flex-col justify-center items-center rounded-xl p-6"
+          >
+            <h2 class="text-xl font-semibold mb-3">
+              {{ val.title }}
+            </h2>
+            <p class="text-sm text-justify">
+              {{ val.desc }}
+            </p>
+          </div>
+        @endeach
+      </div>
+    </section>
+
+    <!-- Playlist -->
+    <section class="text-center my-20">
+      <h1 class="text-3xl font-bold mb-8">
+        Playlist Musik Andalan Kami
+      </h1>
+      <div class="flex justify-center">
+        <iframe
+          class="rounded-xl shadow-lg"
+          src="https://open.spotify.com/embed/playlist/3O38U8ZpxejCI3AFxlIaFL?utm_source=generator"
+          width="500"
+          height="352"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        >
+        </iframe>
+      </div>
+    </section>
+  @end
+@end
